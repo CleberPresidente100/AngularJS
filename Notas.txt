@@ -1,0 +1,14 @@
+# 02-Diretivas Parte 1
+    01 - ngApp --> Definindo as fronteiras da aplicação.
+    02 - ngController --> Vinculando um elemento da View ao Controller.
+    03 - ngBind --> Substituindo o elemento por uma expressão.
+    04 - ngRepeat --> Iterando sobre os itens de uma coleção ou de um objeto.
+    05 - ngModel --> Vincula uma propriedade ao $scope.
+    06 - ngClick --> Atribuindo um comportamento ao evento.
+        Mantra 1 :  Nunca ler o $scope dentro do Controller.
+                    O Controller apenas escreve no $scope.
+                    O Controller NUNCA ! JAMAIS ! lê o $scope.
+        
+        Mantra 2 :  O ng-model deve passar o objeto já pronto para o $scope, invés de apenas pedaços dele.
+                    Ou seja, invés de passar ng-model="nome" e ng-model="telefone" que pertencem ao objeto "contato" (neste caso seria necessário montar o objeto no controller),
+                    o correto seria passar ng-model="contato.nome" e ng-model="contato.telefone", pois assim o $scope já receberia o objeto "contato" montado e pronto para ser processado.

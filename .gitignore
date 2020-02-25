@@ -2,6 +2,6 @@
 # http://gitignore.io/
 
 # Para todos os arquivos e sub-pastas localizados na pasta angular-1.7.9
-angular-1.7.9/
+tools/
 # Para arquivos .ZIP
 *.zip
