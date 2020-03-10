@@ -1,0 +1,151 @@
+<html ng-app="listaTelefonica">
+    <meta charset="UTF-8">
+    <head>
+        <title>Lista Telefônica</title>
+        <link rel="stylesheet" type="text/css" href="../lib/bootstrap/bootstrap.css">
+        <style>
+            .jumbotron{
+                width: 500px;
+                text-align: center;
+                margin-top: 20px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .table{
+                margin-top: 20px;
+            }
+            .form-control{
+                margin-bottom: 5px;
+            }
+            .selecionado{
+                background-color: yellow;
+            }
+            .negrito{
+                font-weight: bold;
+            }
+        </style>
+        <script src="../lib/AngularJS/angular.js"></script>
+        <script>
+            angular.module("listaTelefonica", []);
+            angular.module("listaTelefonica").controller("listaTelefonicaController", function($scope){
+                
+                $scope.app = "Lista Telefônica";
+
+                $scope.listaDeContatos = [
+                    {nome: "Cleber", telefone: "123456789", cor: "blue"},
+                    {nome: "Presidente", telefone: "987654321", cor: "green"},
+                    {nome: "100%", telefone: "1597532648", cor: "yellow"}
+                ];
+
+                $scope.operadoras = [
+                    {nome: "Oi", codigo: 14, categoria: "Celular"},
+                    {nome: "Vivo", codigo: 15, categoria: "Celular"},
+                    {nome: "Tim", codigo: 41, categoria: "Celular"},
+                    {nome: "GVT", codigo: 25, categoria: "Fixo"},
+                    {nome: "Embratel", codigo: 21, categoria: "Fixo"},
+                ];
+
+                $scope.cores = [
+                    {nome: "Azul", codigo: "blue"},
+                    {nome: "Verde", codigo: "green"},
+                    {nome: "Amarelo", codigo: "yellow"},
+                    {nome: "Vermelho", codigo: "red"},
+                ];
+
+                $scope.adicionarContato = function(contato){
+                    console.log(contato);
+                    $scope.listaDeContatos.push(angular.copy(contato));
+                    delete $scope.contato;
+                };
+                $scope.apagarContato = function(contatos){
+                    $scope.listaDeContatos = contatos.filter(function (contato){
+                        if(!contato.selecionado){
+                            return contato;
+                        }
+                    });
+                };
+
+                $scope.isContatoSelecionado = function(contatos){
+                    return contatos.some (function(contato){
+                        return contato.selecionado;
+                    });
+                }
+            });
+        </script>
+    </head>
+    <body ng-controller="listaTelefonicaController">
+        <!-- <div> -->
+        <div class="jumbotron">
+            <!-- <h4 ng-bind="app"></h4> -->
+            <h3>{{app}}</h3>
+            <table class="table">
+                <tr>
+                    <th></th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Operadora</th>
+                    <th>Cor</th>
+                </tr>
+                <tr ng-class="{'selecionado negrito': contato.selecionado}"
+                    ng-repeat="contato in listaDeContatos">
+                        <td><input type="checkbox" ng-model="contato.selecionado"></td>
+                        <td>{{contato.nome}}</td>
+                        <td>{{contato.telefone}}</td>
+                        <td>{{contato.operadora.nome}}</td>
+                        <td><div style="width: 20px; height: 20px;" ng-style="{'background-color': contato.cor}"></div></td>
+                </tr>
+            </table>
+            <!-- <table class="table table-striped">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                </tr>
+                <tr ng-repeat="contato in listaDeContatos">
+                    <td ng-repeat="(key, value) in contato">
+                        {{value}}
+                    </td>
+                </tr>
+            </table> -->
+            <hr/>
+            <div>
+                <!-- <span>Nome:</span> -->
+                Nome: <input placeholder="Nome" class="form-control" type="text"ng-model="contato.nome"/>
+            </div>
+            <div>
+                <!-- <span>Telefone: </span> -->
+                Telefone:
+                <input placeholder="Telefone" class="form-control" type="text" ng-model="contato.telefone"/>
+            </div>
+            <select
+                class="form-control"
+                ng-model="contato.operadora"
+                ng-options="operadora.nome group by operadora.categoria for operadora in operadoras">
+                    <option value="">Selecione uma operadora . . .</option>
+            </select>
+            <!-- <select
+                class="form-control"
+                ng-model="contato.cor"                
+                ng-options="cor as cor.nome for cor in cores">
+                    <option value="">Selecione uma cor . . .</option>
+            </select> -->
+            <button
+                class="btn btn-primary btn-block"
+                ng-click="adicionarContato(contato)"
+                ng-disabled="!contato.nome || !contato.telefone || !contato.operadora">
+                <!-- ng-disabled="!contato.nome || !contato.telefone || !contato.operadora || !contato.cor"> -->
+                    Adicionar Contato
+            </button>
+            <button
+                class="btn btn-danger btn-block"
+                ng-disabled="!isContatoSelecionado(listaDeContatos)"
+                ng-click="apagarContato(listaDeContatos)">
+                    Apagar Contato
+            </button>
+            <p>{{contato}}</p>
+            <p>{{contato.nome}}</p>
+            <p>{{contato.telefone}}</p>
+        </div>
+
+        <div ng-include="'footer.html'"></div>
+    </body>
+</html>
