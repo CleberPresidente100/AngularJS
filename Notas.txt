@@ -38,6 +38,19 @@
     22 - $error --> Consultando os erros de um campo ou formulário.
     23 - ngPattern --> Define uma expressão relugar (RegExp) para validar o campo.
 
+# 05-Aplicando Filtros
+    Filtros transformam o resultado de uma expressão, realizando operações como a formatação de data, a conversão de moeda e a ordenação de Array.
+    Para se utilizar um filtro, basta colocar um pipe "|" após a variável na qual se deseja aplicar o filtro.
+    Após o pipe, se coloca o filtro que se deseja aplicar.
+
+    24 - uppercase --> Transforma uma String em letra maiúscula.
+    25 - lowerrcase --> Transforma uma String em letra minúscula.
+    26 - date --> Formata uma data usando uma máscara.
+    27 - filter --> Filtra um Array com base em um critério.
+    28 - orderBy --> Ordena um Array com base em um critério.
+    29 - currency --> Converte um número para moeda.
+    30 - number --> Formata um número.
+    30 - limitTo --> Limita o tamanho de um Array ou de uma String.
 
 
 
