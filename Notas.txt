@@ -27,6 +27,18 @@
     13 - ngIf --> Gerar (no HTML) um elemento condicionalmente.
     14 - ngInclude --> Incluir conteúdo dinamicamente.
 
+# 04-Validando Formulários
+    15 - ngRequired --> Define um determinado campo como obrigatório.
+    16 - $valid --> Consultando a validade de um campo ou formulário.
+    17 - $invalid --> Consultando a validade de um campo ou formulário.
+    18 - $pristine --> Verificando se um formulário ou campo já foi utilizado alguma vez.
+    19 - $dirty --> Verificando se um formulário ou campo já foi utilizado alguma vez.
+    20 - ngMinlength --> Define o tamanho mínimo permitido.
+    21 - ngMaxlength --> Define o tamanho máximo permitido.
+    22 - $error --> Consultando os erros de um campo ou formulário.
+    23 - ngPattern --> Define uma expressão relugar (RegExp) para validar o campo.
+
+
 
 
 
