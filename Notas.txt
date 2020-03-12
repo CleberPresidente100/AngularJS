@@ -24,7 +24,7 @@
     10 - ngStyle --> Aplicando estilos CSS dinamicamente.
     11 - ngShow --> Exibir um elemento condicionalmente.
     12 - ngHide --> Ocultar um elemento condicionalmente.
-    13 - ngIf --> Gerar (no HTML) um elemento condicionalmente.
+    13 - ngIf --> Gerar um elemento no DOM (no HTML) condicionalmente.
     14 - ngInclude --> Incluir conteúdo dinamicamente.
 
 # 04-Validando Formulários
@@ -52,6 +52,21 @@
     30 - number --> Formata um número.
     30 - limitTo --> Limita o tamanho de um Array ou de uma String.
 
+# 06-IntegrandoComBack-End
+    31 - $http --> O serviço $http do Angular permite a realização de requisições utilizando XMLHttpRequest ou via JSONP:
+            * get(url, config)
+            * post(url, data, config)
+            * put(url, data, config)
+            * delete(url, config)
+            * heap(url, config)
+            * jsonp(url, config)
+
+    32 - SOP (Same Origin Policy) --> Política de restrição de segurança que impede que o navegador acesse recursos alheios a sua origem, considerando o protocolo, host e porta.
+    33 - JSONP (JSON with Padding) --> Estratégia para burlar o SOP.
+            Receber dados de get através da tag <script>.
+            (Minuto 29 da vídeo aula).
+    34 - CORS (Cross Origin Resource Sharing) --> Permissão para acessar recursos externos por meios de cabeçalhos HTTP adicionais.
+            (Minuto 30:52 da vídeo aula).
 
 
 
