@@ -68,6 +68,48 @@
     34 - CORS (Cross Origin Resource Sharing) --> Permissão para acessar recursos externos por meios de cabeçalhos HTTP adicionais.
             (Minuto 30:52 da vídeo aula).
 
+# 07-Organizando_o_Projeto
+    35 - Inline Style --> Tudo no mesmo arquivo.
+    36 - Stereotyped Style --> Arquivos separados em pastas tipadas (Uma pasta para cada typo de arquivo).
+            > app/
+                > css/
+                > js/
+                > lib/
+                > view/
+                > index.html
+
+    37 - Specific Style --> Igual ao anterior, porém com subdivisões por tipo de componente.
+            > app/
+                > css/
+                > js/
+                    > controllers/
+                    > services/
+                    > modules/
+                > lib/
+                > view/
+                > index.html
+
+    38 - Domain Style --> Agrupando os arquivos por Domínio.
+            > app/
+                > app/
+                > login/
+                > lista/
+                > shared/
+                > lib/
+                > index.html
+
+    39 - CEBI (Domain Specific) Style --> Agrupando os arquivos por Domínio, porém com subdivisões por tipo de componente.
+            > app/
+                > app/
+                > login/
+                > lista/
+                    > controllers/
+                    > views/
+                    > listaModule.js
+                > shared/
+                > lib/
+                > index.html
+
 
 
 
