@@ -15,6 +15,8 @@
                     Ou seja, invés de passar ng-model="nome" e ng-model="telefone" que pertencem ao objeto "contato" (neste caso seria necessário montar o objeto no controller),
                     o correto seria passar ng-model="contato.nome" e ng-model="contato.telefone", pois assim o $scope já receberia o objeto "contato" montado e pronto para ser processado.
 
+
+
 # 03-Diretivas Parte 2
     Diretivas são extensões da linguagem HTML que permite a implementação de novos comportamentos, de forma declarativa.
 
@@ -27,6 +29,8 @@
     13 - ngIf --> Gerar um elemento no DOM (no HTML) condicionalmente.
     14 - ngInclude --> Incluir conteúdo dinamicamente.
 
+
+
 # 04-Validando Formulários
     15 - ngRequired --> Define um determinado campo como obrigatório.
     16 - $valid --> Consultando a validade de um campo ou formulário.
@@ -37,6 +41,8 @@
     21 - ngMaxlength --> Define o tamanho máximo permitido.
     22 - $error --> Consultando os erros de um campo ou formulário.
     23 - ngPattern --> Define uma expressão relugar (RegExp) para validar o campo.
+
+
 
 # 05-Aplicando Filtros
     Filtros transformam o resultado de uma expressão, realizando operações como a formatação de data, a conversão de moeda e a ordenação de Array.
@@ -51,6 +57,8 @@
     29 - currency --> Converte um número para moeda.
     30 - number --> Formata um número.
     30 - limitTo --> Limita o tamanho de um Array ou de uma String.
+
+
 
 # 06-IntegrandoComBack-End
     31 - $http --> O serviço $http do Angular permite a realização de requisições utilizando XMLHttpRequest ou via JSONP:
@@ -67,6 +75,8 @@
             (Minuto 29 da vídeo aula).
     34 - CORS (Cross Origin Resource Sharing) --> Permissão para acessar recursos externos por meios de cabeçalhos HTTP adicionais.
             (Minuto 30:52 da vídeo aula).
+
+
 
 # 07-Organizando_o_Projeto
     35 - Inline Style --> Tudo no mesmo arquivo.
@@ -109,6 +119,42 @@
                 > shared/
                 > lib/
                 > index.html
+
+
+
+# 08-CriandoServicos
+    Um Serviço é um singleton, ou seja, um objeto único, criado na inicialização da aplicação e que está disponível para ser injetado em outros componentes.
+    O seu objetivo principal é evitar a duplicação de código em controllers, diretivas, filtros e serviços.
+
+    40 - Factory --> A Factory é o equivalente a uma classe. Ela é uma função (a qual pode receber parâmetros ou não) que "fabrica" e retorna um objeto.
+            Ex.:
+                var criarPessoa = function (nome, idade){
+                    return {
+                        nome: nome,
+                        idade: idade,
+                    };
+                };
+
+                var maria = criarPessoa("maria", 20);
+    
+    41 - Service --> Um Service é o equivalente a um construtor.
+            Ex.:
+                var Pessoa = function (nome, idade){
+                    this.nome = nome;
+                    this.idade = idade;
+                };
+
+                var maria = new Pessoa("maria", 20);
+    
+    42 - value --> É um serviço que armazena valores utilizadas pelos módulos. Estes valores NÃO podem ser injetadas nos serviços do tipo Provider.
+
+    43 - Provider --> É o serviço que que pode ser configurado.
+
+    44 - constant --> É um serviço que armazena constantes utilizadas pelos módulos. Ao contrário dos valores, estas constantes podem ser injetadas nos serviços do tipo Provider.
+
+
+
+
 
 
 
